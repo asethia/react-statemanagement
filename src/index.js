@@ -1,13 +1,16 @@
-import React from 'react';
+import React from "react";
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import {ColorProvider} from "./hooks/color-hooks.js";
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <React.StrictMode>
+  //the array of colors will made available to any 
+  // context consumers found in our entire component tree.
+  <ColorProvider>
     <App />
-  </React.StrictMode>,
+  </ColorProvider>,
   document.getElementById('root')
 );
 
